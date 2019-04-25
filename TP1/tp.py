@@ -8,6 +8,8 @@ from sklearn.metrics import mean_squared_error
 from sklearn.metrics import r2_score
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
+from collections import Counter
+
 
 data = pd.read_csv("./creditcard.csv")
 
@@ -60,3 +62,18 @@ t = t.fit(x_train, y_train)
 y_pred = t.predict(x_test)
 print(classification_report(y_test, y_pred))
 print(confusion_matrix(y_test, y_pred))
+
+cpt = Counter(data['Class'].values)
+print(cpt)
+class_cpt  = cpt.values()
+a, b  = (cpt[i] for i in cpt)
+
+print('class 0 : ', a)
+print('class 1 : ', b)
+
+#first test del
+
+diff = a - b
+
+condition = data.Cl
+d = data.where(data.Class == 1 and 
