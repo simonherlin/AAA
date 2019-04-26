@@ -19,19 +19,8 @@ data = pd.read_csv("./creditcard.csv")
 #print(data.head)
 #print(data['Class'].value_count())
 
-def traitment(data):
+def traitment(x_train, y_train, x_test, y_test):
     print('begin traitment')
-    train, test = train_test_split(data)
-
-    x_train = train
-    y_train = train['Class']
-    del x_train['Class']
-
-
-    x_test = test
-    y_test = test['Class']
-    del x_test['Class']
-
 
     print('#############')
     print('RandomForestClassifier')
@@ -72,26 +61,45 @@ def traitment(data):
 
 
 if __name__ == '__main__':
-    #first test del
+    print('begin traitment')
+    train, test = train_test_split(data)
+
+    x_train = train
+    y_train = train['Class']
+    del x_train['Class']
+
+    x_test = test
+    y_test = test['Class']
+    del x_test['Class']
+
     print('traitement with original data')
-    traitment(data)
+    traitment(x_train, y_train, x_test, y_test)
 
 
     print('traitment with class0 remove')
-    class0 = data[data.Class == 0]
-    class1 = data[data.Class == 1]
-
-    print(len(class0))
-    print(len(class1))
+    class0 = data[train.Class == 0]
+    class1 = data[train.Class == 1]
 
     class0 = class0.drop(class0.index[len(class1):(len(class0))])
-    print(len(class0))
+    #print(len(class0))
     new_data = class0.append(class1)
-    traitment(new_data)
+
+    x_train = new_data
+    y_train = new_data['Class']
+    del new_data['Class']
+
+    traitment(x_train, y_train, x_test, y_test)
 
     print('traitment with up len class1')
+
+
     class0 = data[data.Class == 0]
     class1 = class1.append([class1] * int((len(class0) / len(class1))), ignore_index=True)
 
     new_data = class0.append(class1)
-    traitment(new_data)
+
+    x_train = new_data
+    y_train = new_data['Class']
+    del new_data['Class']
+
+    traitment(x_train, y_train, x_test, y_test)
