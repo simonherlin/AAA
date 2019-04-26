@@ -19,61 +19,79 @@ data = pd.read_csv("./creditcard.csv")
 #print(data.head)
 #print(data['Class'].value_count())
 
-train, test = train_test_split(data)
+def traitment(data):
+    print('begin traitment')
+    train, test = train_test_split(data)
 
-x_train = train
-y_train = train['Class']
-del x_train['Class']
-
-
-x_test = test
-y_test = test['Class']
-del x_test['Class']
+    x_train = train
+    y_train = train['Class']
+    del x_train['Class']
 
 
-print('#############')
-rdc = RandomForestClassifier()
-rdc.fit(x_train, y_train)
-#print(rdc.feature_importances_)
-#print(rdc.predict(x_test))
-y_pred = rdc.predict(x_test)
-print(classification_report(y_test, y_pred))
-print(confusion_matrix(y_test, y_pred))
+    x_test = test
+    y_test = test['Class']
+    del x_test['Class']
 
-print('#############')
-knn = KNeighborsClassifier(n_neighbors=2)
-knn.fit(x_train, y_train)
-y_pred = knn.predict(x_test)
-print(classification_report(y_test, y_pred))
-print(confusion_matrix(y_test, y_pred))
 
-print('#############')
+    print('#############')
+    print('RandomForestClassifier')
+    rdc = RandomForestClassifier()
+    rdc.fit(x_train, y_train)
+    #print(rdc.feature_importances_)
+    #print(rdc.predict(x_test))
+    y_pred = rdc.predict(x_test)
+    print(classification_report(y_test, y_pred))
+    print(confusion_matrix(y_test, y_pred))
 
-mpl = MLPClassifier()
-mpl.fit(x_train, y_train)
-y_pred = mpl.predict(x_test)
-print(classification_report(y_test, y_pred))
-print(confusion_matrix(y_test, y_pred))
+    print('#############')
+    print('KNeighborsClassifier')
+    knn = KNeighborsClassifier(n_neighbors=2)
+    knn.fit(x_train, y_train)
+    y_pred = knn.predict(x_test)
+    print(classification_report(y_test, y_pred))
+    print(confusion_matrix(y_test, y_pred))
 
-print('#############')
+    print('#############')
+    print('MLPClassifier')
+    mpl = MLPClassifier()
+    mpl.fit(x_train, y_train)
+    y_pred = mpl.predict(x_test)
+    print(classification_report(y_test, y_pred))
+    print(confusion_matrix(y_test, y_pred))
 
-t = tree.DecisionTreeClassifier()
-t = t.fit(x_train, y_train)
-y_pred = t.predict(x_test)
-print(classification_report(y_test, y_pred))
-print(confusion_matrix(y_test, y_pred))
+    print('#############')
+    print('tree')
+    t = tree.DecisionTreeClassifier()
+    t = t.fit(x_train, y_train)
+    y_pred = t.predict(x_test)
+    print(classification_report(y_test, y_pred))
+    print(confusion_matrix(y_test, y_pred))
 
-cpt = Counter(data['Class'].values)
-print(cpt)
-class_cpt  = cpt.values()
-a, b  = (cpt[i] for i in cpt)
+    print('#############')
+    print('End traitment')
 
-print('class 0 : ', a)
-print('class 1 : ', b)
 
-#first test del
+if __name__ == '__main__':
+    #first test del
+    print('traitement with original data')
+    traitment(data)
 
-diff = a - b
 
-condition = data.Cl
-d = data.where(data.Class == 1 and 
+    print('traitment with class0 remove')
+    class0 = data[data.Class == 0]
+    class1 = data[data.Class == 1]
+
+    print(len(class0))
+    print(len(class1))
+
+    class0 = class0.drop(class0.index[len(class1):(len(class0))])
+    print(len(class0))
+    new_data = class0.append(class1)
+    traitment(new_data)
+
+    print('traitment with up len class1')
+    class0 = data[data.Class == 0]
+    class1 = class1.append([class1] * int((len(class0) / len(class1))), ignore_index=True)
+
+    new_data = class0.append(class1)
+    traitment(new_data)
