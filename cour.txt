@@ -1,0 +1,18 @@
+exemple :
+
+90 K: A
+10 K : B
+
+On peut dupliquer les données
+90 K : A
+90 K : B
+
+Train = 2/3 data
+Test = 1/3 data
+
+pas bien car duplication de point que l'on peut avoir en test
+
+Il faut muliplier les point que l'on train pour en pas les avoir en test
+
+Tensorflow
+Placeholder reserve un emplacement pour une variable

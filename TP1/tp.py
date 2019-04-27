@@ -9,6 +9,7 @@ from sklearn.metrics import r2_score
 from sklearn.metrics import classification_report
 from sklearn.metrics import confusion_matrix
 from collections import Counter
+from sklearn.utils import shuffle
 
 
 data = pd.read_csv("./creditcard.csv")
@@ -64,6 +65,10 @@ if __name__ == '__main__':
     print('begin traitment')
     train, test = train_test_split(data)
 
+    class0_master = train[train.Class == 0]
+    class1_master = train[train.Class == 1]
+
+    train = shuffle(train)
     x_train = train
     y_train = train['Class']
     del x_train['Class']
@@ -77,29 +82,31 @@ if __name__ == '__main__':
 
 
     print('traitment with class0 remove')
-    class0 = data[train.Class == 0]
-    class1 = data[train.Class == 1]
-
+    class0 = class0_master
+    class1 = class1_master
     class0 = class0.drop(class0.index[len(class1):(len(class0))])
     #print(len(class0))
-    new_data = class0.append(class1)
+    class0 = class0.append(class1)
 
-    x_train = new_data
-    y_train = new_data['Class']
-    del new_data['Class']
+    new_value = shuffle(class0)
+    x_train = new_value
+    y_train = new_value['Class']
+    del x_train['Class']
 
     traitment(x_train, y_train, x_test, y_test)
 
     print('traitment with up len class1')
 
+    class0 = class0_master
+    class1 = class1_master
 
-    class0 = data[data.Class == 0]
     class1 = class1.append([class1] * int((len(class0) / len(class1))), ignore_index=True)
 
-    new_data = class0.append(class1)
+    class0 = class0.append(class1)
 
-    x_train = new_data
-    y_train = new_data['Class']
-    del new_data['Class']
+    new_value = shuffle(class0)
+    x_train = new_value
+    y_train = new_value['Class']
+    del x_train['Class']
 
     traitment(x_train, y_train, x_test, y_test)
