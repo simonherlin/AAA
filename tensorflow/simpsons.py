@@ -12,7 +12,7 @@ img_width, img_height = 150, 150
 
 train_data_dir = './simpsons_dataset/'
 
-epochs = 30
+epochs = 5
 batch_size = 16
 
 input_shape = (img_width, img_height, 3)
@@ -39,6 +39,7 @@ model.add(tf.keras.layers.Dense(nb_classes, activation='softmax'))
 
 model = Sequential()
 
+
 model.add(keras.layers.Conv2D(32, kernel_size=kernel_size,activation='relu', input_shape=input_shape))
 model.add(keras.layers.MaxPooling2D(pool_size=pool_size))
 model.add(keras.layers.Dropout(0.5))
@@ -47,22 +48,38 @@ model.add(keras.layers.Conv2D(64, kernel_size=kernel_size,activation='relu', inp
 model.add(keras.layers.MaxPooling2D(pool_size=pool_size))
 model.add(keras.layers.Dropout(0.5))
 
-
 model.add(keras.layers.Conv2D(128, kernel_size=kernel_size,activation='relu', input_shape=input_shape))
 model.add(keras.layers.MaxPooling2D(pool_size=pool_size))
 model.add(keras.layers.Dropout(0.5))
-
 
 model.add(keras.layers.Conv2D(256, kernel_size=kernel_size,activation='relu', input_shape=input_shape))
 model.add(keras.layers.MaxPooling2D(pool_size=pool_size))
 model.add(keras.layers.Dropout(0.5))
 
+model.add(keras.layers.Conv2D(512, kernel_size=kernel_size,activation='relu', input_shape=input_shape))
+model.add(keras.layers.MaxPooling2D(pool_size=pool_size))
+model.add(keras.layers.Dropout(0.5))
+
+
 model.add(keras.layers.Flatten())
 model.add(keras.layers.Dropout(0.5))
 #model.add(keras.layers.Dense(256, activation='relu'))
 #model.add(keras.layers.Dropout(0.5))
-model.add(keras.layers.Dense(128, activation='relu'))
+model.add(keras.layers.Dense(512, activation='relu'))
 model.add(keras.layers.Dropout(0.5))
+# model.add(keras.layers.Dense(256, activation='relu'))
+# model.add(keras.layers.Dropout(0.5))
+# model.add(keras.layers.Dense(128, activation='relu'))
+# model.add(keras.layers.Dropout(0.5))
+# model.add(keras.layers.Dense(64, activation='relu'))
+# model.add(keras.layers.Dropout(0.5))
+# model.add(keras.layers.Dense(64, activation='relu'))
+# model.add(keras.layers.Dropout(0.5))
+# model.add(keras.layers.Dense(32, activation='relu'))
+# model.add(keras.layers.Dropout(0.5))
+# model.add(keras.layers.Dense(16, activation='relu'))
+# model.add(keras.layers.Dropout(0.5))
+#
 # model.add(keras.layers.Dense(64, activation='relu'))
 # model.add(keras.layers.Dropout(0.5))
 # model.add(keras.layers.Dense(32, activation='relu'))

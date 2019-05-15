@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c5f6b8a-1078-4ac0-8d62-00229a0e311c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/tensorflow/film/film.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tensorflow/simpsons.py" beforeDir="false" afterPath="$PROJECT_DIR$/tensorflow/simpsons.py" afterDir="false" />
     </list>
@@ -30,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TP1/tp.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="14" column="38" selection-start-line="14" selection-end-line="14" selection-end-column="38" />
+            <state relative-caret-position="780">
+              <caret line="63" column="26" selection-start-line="63" selection-end-line="63" selection-end-column="26" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -40,10 +42,40 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tensorflow/film/film.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret lean-forward="true" />
+              <folding>
+                <element signature="e#0#19#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="800">
+              <caret line="71" column="7" selection-start-line="71" selection-start-column="7" selection-end-line="71" selection-end-column="7" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tensorflow/film/films.csv">
+          <provider selected="true" editor-type-id="LargeFileEditor">
+            <state>
+              <caret column="12" selection-start-column="6" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow/example.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="23" column="17" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="17" />
+            <state relative-caret-position="1350">
+              <caret line="94" selection-start-line="94" selection-end-line="94" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
@@ -51,11 +83,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tensorflow/simpsons.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret lean-forward="true" />
+            <state relative-caret-position="835">
+              <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+              <folding>
+                <element signature="e#0#56#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -65,15 +100,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="270">
               <caret line="18" selection-start-line="18" selection-end-line="18" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/TP1/creditcard.csv">
-          <provider selected="true" editor-type-id="LargeFileEditor">
-            <state relative-caret-position="60">
-              <caret line="4" column="188" selection-start-line="4" selection-start-column="188" selection-end-line="4" selection-end-column="188" />
             </state>
           </provider>
         </entry>
@@ -94,7 +120,18 @@
       <find>pool_size</find>
       <find>kernel</find>
       <find>catego</find>
+      <find>train_test_split</find>
+      <find>keras</find>
+      <find>X_train</find>
       <find>x_train</find>
+      <find>x_test</find>
+      <find>np</find>
+      <find>Tokenizer</find>
+      <find>to_categorical</find>
+      <find>tf</find>
+      <find>K</find>
+      <find>Activation</find>
+      <find>Dropout</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -108,6 +145,8 @@
         <option value="$PROJECT_DIR$/tensorflow/tp_simpsons.py" />
         <option value="$PROJECT_DIR$/tensorflow/example.py" />
         <option value="$PROJECT_DIR$/tensorflow/simpsons.py" />
+        <option value="$PROJECT_DIR$/tensorflow/film/film.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -123,7 +162,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -140,7 +178,7 @@
               <item name="AAA" type="b2602c69:ProjectViewProjectNode" />
               <item name="AAA" type="462c0819:PsiDirectoryNode" />
               <item name="tensorflow" type="462c0819:PsiDirectoryNode" />
-              <item name="simpsons_dataset" type="462c0819:PsiDirectoryNode" />
+              <item name="film" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="AAA" type="b2602c69:ProjectViewProjectNode" />
@@ -151,6 +189,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -191,11 +230,20 @@
       <workItem from="1556288418105" duration="1500000" />
       <workItem from="1556394965174" duration="512000" />
       <workItem from="1556457269307" duration="4614000" />
+      <workItem from="1556556413256" duration="39000" />
+      <workItem from="1556556665303" duration="69000" />
+      <workItem from="1557580812039" duration="242000" />
+      <workItem from="1557729791823" duration="8398000" />
+      <workItem from="1557754713591" duration="4006000" />
+      <workItem from="1557809376894" duration="3825000" />
+      <workItem from="1557818371257" duration="8526000" />
+      <workItem from="1557896012116" duration="4210000" />
+      <workItem from="1557920179077" duration="1493000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31456000" />
+    <option name="totallyTimeSpent" value="62264000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -210,7 +258,7 @@
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1339381" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14834578" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -240,20 +288,34 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/tensorflow/tp_simpsons.py" />
+    <entry file="file://$PROJECT_DIR$/TP1/creditcard.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="60">
+          <caret line="4" column="188" selection-start-line="4" selection-start-column="188" selection-end-line="4" selection-end-column="188" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/TP1/tp.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="14" column="38" selection-start-line="14" selection-end-line="14" selection-end-column="38" />
+        <state relative-caret-position="780">
+          <caret line="63" column="26" selection-start-line="63" selection-end-line="63" selection-end-column="26" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tensorflow/film/films.csv">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state>
+          <caret column="12" selection-start-column="6" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tensorflow/example.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="23" column="17" selection-start-line="23" selection-start-column="10" selection-end-line="23" selection-end-column="17" />
+        <state relative-caret-position="1350">
+          <caret line="94" selection-start-line="94" selection-end-line="94" />
           <folding>
             <element signature="e#0#18#0" expanded="true" />
           </folding>
@@ -267,17 +329,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TP1/creditcard.csv">
-      <provider selected="true" editor-type-id="LargeFileEditor">
-        <state relative-caret-position="60">
-          <caret line="4" column="188" selection-start-line="4" selection-start-column="188" selection-end-line="4" selection-end-column="188" />
+    <entry file="file://$PROJECT_DIR$/tensorflow/simpsons.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="835">
+          <caret line="142" lean-forward="true" selection-start-line="142" selection-end-line="142" />
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tensorflow/simpsons.py">
+    <entry file="file://$PROJECT_DIR$/tensorflow/film/film.py">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret lean-forward="true" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="71" column="7" selection-start-line="71" selection-start-column="7" selection-end-line="71" selection-end-column="7" />
         </state>
       </provider>
     </entry>
